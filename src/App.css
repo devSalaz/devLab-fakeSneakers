@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
+@import url("../src/styles/styleVariables.css");
+
+html,
+body,
+#root,
+.App {
+  scroll-behavior: smooth;
+  width: 100%;
+  font-family: "Noto Sans", sans-serif;
+}
+
+.App {
+  background-color: var(--main-bg-red-color);
+  transition: background-color 400ms ease;
+}
+
+.App.dark {
+  background-color: var(--main-bg-purple-color);
+}
+
+.compact-picker {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  padding: 10px !important;
+}
+
+.loading-container {
+  opacity: 0 !important;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loader-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--main-bg-purple-color);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  z-index: 999;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 400ms ease 1200ms;
 }
 
-.App-link {
-  color: #61dafb;
+.loader-content.loaded {
+  opacity: 0;
+  pointer-events: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loader-content h2 {
+  font-size: 60px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #ffffff;
 }
+
+@import url("../src//styles//navbarStyles.css");
+@import url("../src//styles/firstSectionsStyles.css");
+@import url("../src//styles//canvasStyles.css");
+@import url("../src//styles/footerStyles.css");
+@import url("../src//styles//secondSectionStyles.css");
+@import url("../src/styles/thirdSectionStyles.css");
+@import url("../src//styles//editSectionStyles.css");

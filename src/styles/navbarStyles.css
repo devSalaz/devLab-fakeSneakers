@@ -1,0 +1,124 @@
+header {
+  width: 100%;
+  height: 12vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
+}
+
+nav {
+  width: 100%;
+  max-width: 1140px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-navbar {
+  position: relative;
+  width: 130px;
+  height: 81px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transition: transform ease-out 400ms;
+  -webkit-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.35));
+  pointer-events: all;
+}
+
+.logo-navbar:hover {
+  transform: rotate(-6deg);
+}
+
+.logo-navbar img {
+  width: 100%;
+  position: absolute;
+}
+
+.purpleLogo {
+  opacity: 0;
+  transition: opacity 400ms ease;
+}
+
+.purpleLogo.active {
+  opacity: 1;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  transform: scale(1.05);
+  pointer-events: all;
+}
+.switch input {
+  display: none;
+}
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid var(--main-white-color);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+.slider:before {
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+  z-index: 999;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  content: "";
+  transition: 0.5s;
+  background-color: var(--main-white-color);
+  opacity: 1;
+  z-index: 5;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.on,
+.off {
+  position: absolute;
+  color: #fff;
+  font-size: 16px;
+  transform: translateY(-5%);
+}
+
+.off {
+  top: 14px;
+  right: 12px;
+}
+.on {
+  top: 14px;
+  left: 14px;
+}
+input.checked + .slider:before {
+  transform: translateX(33px);
+}
+
+@media (max-width: 1026px) {
+  header {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo-navbar {
+    width: 100px;
+    height: 60px;
+  }
+
+  .switch {
+    transform: scale(0.95);
+  }
+}
